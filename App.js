@@ -92,6 +92,12 @@ export default class App extends Component {
                   onPress={(name, coords) => this.goToPlace(item.name, item.coords)}
                 >
                   {item.name}
+                  
+                  <Text style={styles.listItemsCoords}>
+                    {'\n'}
+                    Latitud: {item.coords[0]}
+                    , Longitud: {item.coords[1]}
+                  </Text>
                 </Text>
               )
             }}
@@ -100,7 +106,6 @@ export default class App extends Component {
                 Lugares Favoritos
               </Text>
             }
-            ItemSeparatorComponent={() => <View style={{ height: 5 }} />}
           />
         </View>
       </View >
@@ -144,6 +149,12 @@ const styles = StyleSheet.create({
     width: width,
     padding: 10,
     textAlign: 'center',
+    marginBottom: 5,
+  },
+  listItemsCoords: {
+    textAlign: 'center',
+    fontSize: 11,
+    color: 'gray',
   },
   listHeader: {
     width: width,
